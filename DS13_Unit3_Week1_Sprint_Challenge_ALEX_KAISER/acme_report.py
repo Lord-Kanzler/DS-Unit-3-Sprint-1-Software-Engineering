@@ -9,14 +9,16 @@ ADJECTIVES = ['Awesome', 'Shiny', 'Impressive', 'Portable', 'Improved']
 NOUNS = ['Anvil', 'Catapult', 'Disguise', 'Mousetrap', '???']
 
 
+
+## Not working, yet!
 def generate_products(num_products=30):
     products = []
     # TODO - your code! Generate and add random products.
     for _ in list(range(num_products)):
-        name = (sample(ADJECTIVES, k=1) + " " + sample(NOUNS, k=1))
+        name = sample(ADJECTIVES, k=1) + list(" ") + sample(NOUNS, k=1)
 
     products.append(name)
-    return products
+return products
 
 
 def inventory_report(products):

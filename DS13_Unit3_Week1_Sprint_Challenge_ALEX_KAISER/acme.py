@@ -8,7 +8,8 @@ import random
 
 class Product():
     def __init__(self, name=None, price=10, weight=20,
-                 flammability=0.5, identifier=random.randint(1000000, 9999999)):
+                 flammability=0.5,
+                 identifier=random.randint(1000000, 9999999)):
         self.name = name
         self.price = price
         self.weight = weight
@@ -20,9 +21,9 @@ class Product():
     def stealability(self):
         '''
         - calculates the price divided by the weight, and then
-        returns a message: if the ratio is less than 0.5 return "Not so stealable...",
-         if it is greater or equal to 0.5 but less than 1.0 return "Kinda stealable.",
-        and otherwise return "Very stealable!"
+        returns a message: if the ratio is less than 0.5 return
+        "Not so stealable...", if it is greater or equal to 0.5 but less than
+        1.0 return "Kinda stealable.", and otherwise return "Very stealable!"
         '''
         steal = self.price / self.weight
         if steal < 0.5:
@@ -37,9 +38,9 @@ class Product():
     def explode(self):
         '''
         - calculates the flammability times the weight, and then
-        returns a message: if the product is less than 10 return "...fizzle.", if it is
-        greater or equal to 10 but less than 50 return "...boom!", and otherwise
-        return "...BABOOM!!"
+        returns a message: if the product is less than 10 return "...fizzle.",
+        if it is greater or equal to 10 but less than 50 return "...boom!",
+        and otherwise return "...BABOOM!!"
         '''
         boom_factor = self.flammability * self.weight
         if boom_factor < 10:
@@ -50,13 +51,15 @@ class Product():
 
         else:
             print("...BABOOM!!")
+    
 
 # Part 3 - A Proper Inheritance
 
 
 class BoxingGlove(Product):
     def __init__(self, name=None, price=10, weight=10,
-                 flammability=0.5, identifier=random.randint(1000000, 9999999)):
+                 flammability=0.5,
+                 identifier=random.randint(1000000, 9999999)):
         super().__init__(
             name=name,
             price=price,
